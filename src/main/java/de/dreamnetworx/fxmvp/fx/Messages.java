@@ -1,5 +1,7 @@
 package de.dreamnetworx.fxmvp.fx;
 
+import de.dreamnetworx.fxmvp.i18n.ResourceBundleControl;
+
 import java.io.IOException;
 import java.util.Locale;
 import java.util.MissingResourceException;
@@ -8,10 +10,14 @@ import java.util.Set;
 
 public class Messages {
 
-    public static final String FILE_ENCODING = "UTF-8";
     public static String DEFAULT_LOCALE_BUNDLE_NAME = "messages/messages";
+
+    public static final String FILE_ENCODING = "UTF-8";
+
     private static Locale resourceBundleLocale = null; // has to be null initially
+
     private static ResourceBundle resourceBundle = null;
+
     private static Locale locale = Locale.GERMANY;
 
     private static synchronized final ResourceBundle getLocaleBundle(String bundlename) {
@@ -19,9 +25,9 @@ public class Messages {
         Locale currentLocale = getLocale();
         if(!currentLocale.equals(resourceBundleLocale)) {
             resourceBundleLocale = currentLocale;
-
             try {
-                resourceBundle = new EncodedControl(FILE_ENCODING).newBundle(bundlename, resourceBundleLocale, "java.properties", Messages.class.getClassLoader(), false);
+                resourceBundle = new ResourceBundleControl(FILE_ENCODING)
+                        .newBundle(bundlename, resourceBundleLocale, ResourceBundleControl.FORMAT_JAVA_PROPERTIES, Messages.class.getClassLoader(), false);
             } catch (IllegalAccessException | InstantiationException | IOException e) {
                 e.printStackTrace();
             }
