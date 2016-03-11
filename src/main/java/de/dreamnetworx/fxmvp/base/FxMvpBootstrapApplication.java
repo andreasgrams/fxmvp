@@ -10,10 +10,7 @@ import java.io.IOException;
 
 public abstract class FxMvpBootstrapApplication extends Application {
 
-    private String packagePresenters;
-
-    public FxMvpBootstrapApplication(String packagePresenters) {
-        this.packagePresenters = packagePresenters;
+    public FxMvpBootstrapApplication() {
     }
 
     protected FxMvpResult initializeMvpApp(final org.springframework.context.ApplicationContext context, final String appLayoutView) {
