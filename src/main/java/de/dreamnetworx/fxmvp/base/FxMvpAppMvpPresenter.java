@@ -14,6 +14,8 @@ import java.io.IOException;
 
 public abstract class FxMvpAppMvpPresenter<V extends View> extends FxMvpPresenter<V> {
 
+    public static final String VIEW = "View";
+    public static final String PRESENTER_IMPL = "PresenterImpl";
     private SpringContextCallback springContextCallback;
 
     public FxMvpAppMvpPresenter() {
@@ -64,9 +66,10 @@ public abstract class FxMvpAppMvpPresenter<V extends View> extends FxMvpPresente
         return (Presenter) springContextCallback.call(controllerBean.getClass());
     }
 
+    //TODO move to naming strategy class
     private String getPresenterName(String fxmlFileName) {
         fxmlFileName = StringUtils.uncapitalize(fxmlFileName);
-        return fxmlFileName.replace("View", "PresenterImpl");
+        return fxmlFileName.replace(VIEW, PRESENTER_IMPL);
     }
 
 
