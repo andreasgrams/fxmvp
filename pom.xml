@@ -20,7 +20,7 @@
     </properties>
 
     <scm>
-        <connection>scm:git:ssh://git@github.com:andreasgrams/fxmvp</connection>
+        <connection>scm:git:ssh://diskstation/volume1/git/repository/fxmvp</connection>
         <tag>fxmvp</tag>
     </scm>
 
