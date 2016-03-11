@@ -19,6 +19,11 @@
         <source.version>1.8</source.version>
     </properties>
 
+    <scm>
+        <connection>scm:git:ssh://git@github.com:andreasgrams/fxmvp</connection>
+        <tag>fxmvp</tag>
+    </scm>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
