@@ -9,7 +9,7 @@ public class FxMvpDefaultNamingConventionConvention implements FxMvpNamingConven
 
     /**
      * Determine the presenter name from fxml filename.
-     *
+     * <p>
      * When the fxml file has the name personView.fxml then is name for presenter personPresenterImpl.
      *
      * @param fxmlFileName filename without path.

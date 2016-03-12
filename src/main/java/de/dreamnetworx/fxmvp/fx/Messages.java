@@ -10,10 +10,8 @@ import java.util.Set;
 
 public class Messages {
 
-    public static String DEFAULT_LOCALE_BUNDLE_NAME = "messages/messages";
-
     public static final String FILE_ENCODING = "UTF-8";
-
+    public static String DEFAULT_LOCALE_BUNDLE_NAME = "messages/messages";
     private static Locale resourceBundleLocale = null; // has to be null initially
 
     private static ResourceBundle resourceBundle = null;

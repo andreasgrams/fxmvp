@@ -1,7 +1,10 @@
 package de.dreamnetworx.fxmvp.api;
 
 import com.google.common.eventbus.EventBus;
-import de.dreamnetworx.fxmvp.base.*;
+import de.dreamnetworx.fxmvp.base.ApplicationContextProvider;
+import de.dreamnetworx.fxmvp.base.FxMvpDefaultNamingConventionConvention;
+import de.dreamnetworx.fxmvp.base.FxMvpException;
+import de.dreamnetworx.fxmvp.base.FxMvpNamingConvention;
 import de.dreamnetworx.fxmvp.fx.FxmlSpringLoader;
 import de.dreamnetworx.fxmvp.fx.JavaInstanceCallback;
 import de.dreamnetworx.fxmvp.fx.SpringContextCallback;
@@ -14,7 +17,6 @@ import org.springframework.util.StringUtils;
 import java.io.IOException;
 
 public abstract class FxMvpAppMvpPresenter<V extends View> extends FxMvpPresenter<V> {
-
 
     private SpringContextCallback springContextCallback;
 
@@ -66,9 +68,5 @@ public abstract class FxMvpAppMvpPresenter<V extends View> extends FxMvpPresente
 
         return (Presenter) springContextCallback.call(controllerBean.getClass());
     }
-
-
-
-
 
 }

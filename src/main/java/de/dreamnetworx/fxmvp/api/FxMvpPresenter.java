@@ -1,8 +1,6 @@
 package de.dreamnetworx.fxmvp.api;
 
 import com.google.common.eventbus.EventBus;
-import de.dreamnetworx.fxmvp.api.Presenter;
-import de.dreamnetworx.fxmvp.api.View;
 import javafx.scene.Node;
 
 public abstract class FxMvpPresenter<V extends View> implements Presenter<V> {

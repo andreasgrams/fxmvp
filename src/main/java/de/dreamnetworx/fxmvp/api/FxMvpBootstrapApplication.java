@@ -16,8 +16,7 @@ import java.io.IOException;
 public abstract class FxMvpBootstrapApplication extends Application {
 
     /**
-     *
-     * @param context spring application context.
+     * @param context       spring application context.
      * @param appLayoutView fxml filename
      * @return
      */
