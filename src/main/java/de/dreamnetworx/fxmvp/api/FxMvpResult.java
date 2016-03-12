@@ -8,11 +8,11 @@ public class FxMvpResult {
     private View view;
     private Presenter presenter;
 
-    public FxMvpResult(final Node node, final View view) {
+    protected FxMvpResult(final Node node, final View view) {
         this(node, view, null);
     }
 
-    public FxMvpResult(final Node node, final View view, Presenter presenter) {
+    protected FxMvpResult(final Node node, final View view, Presenter presenter) {
         this.node = node;
         this.view = view;
         this.presenter = presenter;
