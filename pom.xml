@@ -4,7 +4,7 @@
 
     <groupId>de.dreamnetworx</groupId>
     <artifactId>fxmvp</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <parent>
         <groupId>de.dreamnetworx</groupId>
@@ -19,7 +19,7 @@
 
     <scm>
         <connection>${scm_projects_connection}/fxmvp</connection>
-        <tag>fxmvp-1.0.0</tag>
+        <tag>fxmvp</tag>
     </scm>
 
     <dependencyManagement>
