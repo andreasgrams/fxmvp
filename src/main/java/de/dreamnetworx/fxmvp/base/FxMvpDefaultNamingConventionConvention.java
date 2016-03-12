@@ -8,12 +8,12 @@ public class FxMvpDefaultNamingConventionConvention implements FxMvpNamingConven
     public static final String PRESENTER_IMPL = "PresenterImpl";
 
     /**
-     * Determine the presenter name from fxml Filename.
+     * Determine the presenter name from fxml filename.
      *
-     * When the fxml file has the name personView.fxml then is name for Presenter PersonPresenterImpl.
+     * When the fxml file has the name personView.fxml then is name for presenter personPresenterImpl.
      *
-     * @param fxmlFileName
-     * @return
+     * @param fxmlFileName filename without path.
+     * @return the name of view presenter.
      */
     @Override
     public String getPresenterName(String fxmlFileName) {
