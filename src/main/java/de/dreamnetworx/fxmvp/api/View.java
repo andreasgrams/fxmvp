@@ -1,4 +1,4 @@
-package de.dreamnetworx.fxmvp.base;
+package de.dreamnetworx.fxmvp.api;
 
 public interface View<T extends ViewObserver> {
 

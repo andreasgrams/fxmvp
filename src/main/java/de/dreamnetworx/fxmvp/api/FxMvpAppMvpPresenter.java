@@ -1,6 +1,7 @@
-package de.dreamnetworx.fxmvp.base;
+package de.dreamnetworx.fxmvp.api;
 
 import com.google.common.eventbus.EventBus;
+import de.dreamnetworx.fxmvp.base.*;
 import de.dreamnetworx.fxmvp.fx.FxmlSpringLoader;
 import de.dreamnetworx.fxmvp.fx.JavaInstanceCallback;
 import de.dreamnetworx.fxmvp.fx.SpringContextCallback;
@@ -58,7 +59,6 @@ public abstract class FxMvpAppMvpPresenter<V extends View> extends FxMvpPresente
     }
 
     private Presenter getSpringPresenter(String presenter) {
-
 
         final String springPresenterName = StringUtils.uncapitalize(presenter);
         final ApplicationContext context = ApplicationContextProvider.getInstance().getContext();
