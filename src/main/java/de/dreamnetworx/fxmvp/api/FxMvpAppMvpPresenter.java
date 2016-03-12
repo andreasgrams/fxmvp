@@ -41,10 +41,8 @@ public abstract class FxMvpAppMvpPresenter<V extends View> extends FxMvpPresente
      * @param stage
      * @param fxmlFileName
      * @return
-     * @throws FxMvpException
-     * when fxml file not found
-     * when fxml file has no controller
-     *
+     * @throws FxMvpException when fxml file not found or
+     *                        when fxml file has no controller
      */
     protected FxMvpResult initFxPresenter(Stage stage, String fxmlFileName) {
         try {
