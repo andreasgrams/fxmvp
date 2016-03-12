@@ -1,7 +1,5 @@
 package de.dreamnetworx.fxmvp.api;
 
-import de.dreamnetworx.fxmvp.api.Presenter;
-import de.dreamnetworx.fxmvp.api.View;
 import javafx.scene.Node;
 
 public class FxMvpResult {

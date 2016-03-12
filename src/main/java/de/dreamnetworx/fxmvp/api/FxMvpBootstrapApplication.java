@@ -17,8 +17,8 @@ public abstract class FxMvpBootstrapApplication extends Application {
 
     /**
      *
-     * @param context
-     * @param appLayoutView
+     * @param context spring application context.
+     * @param appLayoutView fxml filename
      * @return
      */
     protected FxMvpResult initializeMvpApp(final org.springframework.context.ApplicationContext context, final String appLayoutView) {
