@@ -42,15 +42,21 @@ public abstract class FxMvpAppMvpPresenter<V extends View> extends FxMvpPresente
      * @param fxmlFileName
      * @return
      * @throws FxMvpException
+     * when fxml file not found
+     * when fxml file has no controller
+     *
      */
     protected FxMvpResult initFxPresenter(Stage stage, String fxmlFileName) {
         try {
             final FXMLLoader result = fxmlSpringLoaderSupport.load(fxmlFileName);
             final Node moduleNode = result.load();
             if(moduleNode == null) {
-                throw new FxMvpException("FXML file can't be loaded, check naming of filename!");
+                throw new FxMvpException("FXML file '\" + fxmlFileName + \"'  can't be loaded, check naming of filename!");
             }
             final View moduleView = result.getController();
+            if(moduleView == null) {
+                throw new FxMvpException("No fx controller in fxml '" + fxmlFileName + "' file definite!");
+            }
             final String presenterName = fxMvpNamingConvention.getPresenterName(fxmlFileName);
             final Presenter presenter = getSpringPresenter(presenterName);
             if(presenter instanceof ViewObserver) {
