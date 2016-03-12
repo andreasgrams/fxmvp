@@ -26,7 +26,7 @@ public class SpringContextCallback implements Callback<Class<?>, Object> {
         try {
             final Object controllerBean = applicationContext.getBean(springPresenterName);
             applicationContext.getAutowireCapableBeanFactory().autowireBean(controllerBean);
-            LOG.info("load viewController from spring context {}", springPresenterName);
+            LOG.debug("load from spring context {}", springPresenterName);
             return controllerBean;
 
         } catch (final NoSuchBeanDefinitionException e) {

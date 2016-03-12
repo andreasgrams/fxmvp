@@ -21,7 +21,7 @@ public class JavaInstanceCallback implements Callback<Class<?>, Object> {
     public Object call(final Class<?> param) {
         final String simpleName = param.getSimpleName();
         try {
-            LOG.info("load viewController per as new Instance {}", simpleName);
+            LOG.debug("create a new Instance of {}", simpleName);
             return param.newInstance();
         } catch (InstantiationException | IllegalAccessException e1) {
             if(callback != null) {
