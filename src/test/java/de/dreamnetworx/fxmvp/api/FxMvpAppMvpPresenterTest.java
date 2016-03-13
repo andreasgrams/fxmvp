@@ -41,6 +41,9 @@ public class FxMvpAppMvpPresenterTest {
 
     }
 
+    /**
+     *
+     */
     @Test(expected = FxMvpException.class)
     public void shouldProvideExceptionWhenFxmlFileNotFound() {
         //given
@@ -50,6 +53,23 @@ public class FxMvpAppMvpPresenterTest {
         //then
     }
 
+    /**
+     *
+     */
+    @Test(expected = FxMvpException.class)
+    public void shouldProvideExceptionWhenViewHasNoController() throws IOException {
+        //given
+        when(fxmlLoader.load()).thenReturn(new HBox());
+        when(fxmlLoader.getController()).thenReturn(null);
+        when(fxmlSpringLoaderSupport.load(anyString())).thenReturn(fxmlLoader);
+        //when
+        cut.initFxPresenter(stage, FILENAME);
+        //then
+    }
+
+    /**
+     *
+     */
     @Test(expected = FxMvpException.class)
     public void shouldProvideExceptionWhenSpringPresenterNotFound() throws IOException {
         //given
