@@ -18,6 +18,9 @@ public class FxMvpDefaultNamingConventionConvention implements FxMvpNamingConven
     @Override
     public String getPresenterName(String fxmlFileName) {
         fxmlFileName = StringUtils.uncapitalize(fxmlFileName);
+        if(!fxmlFileName.contains(VIEW)) {
+            throw new FxMvpException("The view follows not the naming convention! The filename must ends with '*View'");
+        }
         return fxmlFileName.replace(VIEW, PRESENTER_IMPL);
     }
 
