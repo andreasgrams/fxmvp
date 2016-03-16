@@ -60,6 +60,7 @@ public abstract class FxMvpAppMvpPresenter<V extends View> extends FxMvpPresente
             if(presenter instanceof ViewObserver) {
                 moduleView.setViewObserver((ViewObserver) presenter);
             }
+            getEventBus().register(this);
             ((FxMvpPresenter) presenter).construct(moduleView, moduleNode, getEventBus());
             presenter.startPresenting(stage);
 
