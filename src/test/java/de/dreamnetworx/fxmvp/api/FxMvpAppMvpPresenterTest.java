@@ -14,6 +14,7 @@ import org.springframework.context.ApplicationContext;
 
 import java.io.IOException;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.*;
 
@@ -30,6 +31,7 @@ public class FxMvpAppMvpPresenterTest {
 
     @Before
     public void setup() {
+        when(applicationContextSupport.getContext()).thenReturn(applicationContext);
         cut = new FxMvpAppMvpPresenter() {
             @Override
             public void startPresenting(final Stage stage) {
@@ -75,10 +77,42 @@ public class FxMvpAppMvpPresenterTest {
         //given
         when(fxmlLoader.load()).thenReturn(new HBox());
         when(fxmlSpringLoaderSupport.load(anyString())).thenReturn(fxmlLoader);
-        when(applicationContextSupport.getContext()).thenReturn(applicationContext);
+
+        when(fxmlLoader.getController()).thenReturn(null);
         when(applicationContext.getBean(anyString())).thenThrow(NoSuchBeanDefinitionException.class);
         //when
         cut.initFxPresenter(stage, FILENAME);
         //then
+    }
+
+    @Test
+    public void shouldInitFxPresenterSuccessfully() throws IOException {
+        //given
+        when(fxmlLoader.load()).thenReturn(new HBox());
+        when(fxmlSpringLoaderSupport.load(anyString())).thenReturn(fxmlLoader);
+        when(applicationContextSupport.getContext()).thenReturn(applicationContext);
+        when(fxmlLoader.getController()).thenReturn(new ViewToTest());
+        when(applicationContext.getBean(anyString())).thenReturn(new PresenterToTest());
+
+        //when
+        final FxMvpResult fxMvpResult = cut.initFxPresenter(stage, FILENAME);
+        //then
+        assertThat(fxMvpResult).isNotNull();
+    }
+
+    class ViewToTest implements View<PresenterToTest> {
+
+        @Override
+        public void setViewObserver(final PresenterToTest viewObserver) {
+
+        }
+    }
+
+    class PresenterToTest implements Presenter<ViewToTest>, ViewObserver {
+
+        @Override
+        public void startPresenting(final Stage stage) {
+
+        }
     }
 }
