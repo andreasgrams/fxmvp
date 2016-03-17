@@ -1,6 +1,6 @@
 language: java
 
-script: mvn -Dsource 7 clean verify
+script: mvn -P java8 -pl java8 clean verify
 
 notifications:
   email:
