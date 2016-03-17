@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/andreasgrams/fxmvp.svg?branch=master)](https://travis-ci.org/andreasgrams/fxmvp)
+
 # Mission Statement
 Provides a simple implementation of MVP design pattern for Spring based Java FX applications.
 
