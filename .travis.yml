@@ -3,3 +3,5 @@ script: mvn clean verify
 notifications:
   email:
     - andreas.grams@gmail.com
+jdk:
+  - oraclejdk8
