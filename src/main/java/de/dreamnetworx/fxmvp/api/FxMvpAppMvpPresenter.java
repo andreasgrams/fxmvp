@@ -67,7 +67,7 @@ public abstract class FxMvpAppMvpPresenter<V extends View> extends FxMvpPresente
             return new FxMvpResult(moduleNode, moduleView, presenter);
 
         } catch (IOException e) {
-            return null;
+            throw new FxMvpException("Presenter can't be initialized", e);
         }
     }
 
